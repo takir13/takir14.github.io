@@ -3,9 +3,8 @@
 // IIFE - Immediately Invoked Function Expression
 // AKA - Anonymous Self-Executing Function
 (function(){
-    // Functions that run when the user is on that page
-    function DisplayHomePage() {
-        console.log("Called DisplayHomePage");
+
+    function addAboutUsButtonListener(){
 
         // Bind the button on the home page to a variable
         let AboutUsButton = document.getElementById("AboutUsBtn");
@@ -16,6 +15,12 @@
         {
             location.href = "about.html";
         });
+    }
+
+    // Functions that run when the user is on that page
+    function DisplayHomePage() {
+        console.log("Called DisplayHomePage");
+        addAboutUsButtonListener();
 
         // Assigning a variable with the first main tag on the homepage
         let MainContent = document.getElementsByTagName("main")[0];
@@ -34,10 +39,9 @@
         MainContent.appendChild(MainParagraph);
 
         let FirstString = "This is ";
-        let SecondString = `${FirstString}the main paragraph.`;
 
         // Append the paragraph with the new string
-        MainParagraph.textContent = SecondString;
+        MainParagraph.textContent = `${FirstString}the main paragraph.`;
 
         // Update the main tag
         MainContent.appendChild(MainParagraph);
@@ -59,58 +63,22 @@
 
     function DisplayAboutPage(){
         console.log("Called DisplayAboutPage");
-
-        // Bind the button on the home page to a variable
-        let AboutUsButton = document.getElementById("AboutUsBtn");
-
-        // Create an event listener for when the user clicks the button
-        // When the user clicks the button, redirect to the about us page
-        AboutUsButton.addEventListener("click", function ()
-        {
-            location.href = "about.html";
-        });
+        addAboutUsButtonListener();
     }
 
     function DisplayContactPage(){
         console.log("Called DisplayContactPage");
-
-        // Bind the button on the home page to a variable
-        let AboutUsButton = document.getElementById("AboutUsBtn");
-
-        // Create an event listener for when the user clicks the button
-        // When the user clicks the button, redirect to the about us page
-        AboutUsButton.addEventListener("click", function ()
-        {
-            location.href = "about.html";
-        });
+        addAboutUsButtonListener();
     }
 
     function DisplayProductPage(){
         console.log("Called DisplayProductPage");
-
-        // Bind the button on the home page to a variable
-        let AboutUsButton = document.getElementById("AboutUsBtn");
-
-        // Create an event listener for when the user clicks the button
-        // When the user clicks the button, redirect to the about us page
-        AboutUsButton.addEventListener("click", function ()
-        {
-            location.href = "about.html";
-        });
+        addAboutUsButtonListener();
     }
 
     function DisplayServicesPage(){
         console.log("Called DisplayServicesPage");
-
-        // Bind the button on the home page to a variable
-        let AboutUsButton = document.getElementById("AboutUsBtn");
-
-        // Create an event listener for when the user clicks the button
-        // When the user clicks the button, redirect to the about us page
-        AboutUsButton.addEventListener("click", function ()
-        {
-            location.href = "about.html";
-        });
+        addAboutUsButtonListener();
     }
 
     function Start()
