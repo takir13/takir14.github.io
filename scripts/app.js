@@ -1,6 +1,7 @@
 "use strict";
 
-// IIFE: Immediately invoked functional expression
+// IIFE - Immediately Invoked Function Expression
+// AKA - Anonymous Self-Executing Function
 (function(){
     // Functions that run when the user is on that page
     function DisplayHomePage() {
@@ -8,6 +9,13 @@
 
         // Bind the button on the home page to a variable
         let AboutUsButton = document.getElementById("AboutUsBtn");
+
+        // Create an event listener for when the user clicks the button
+        // When the user clicks the button, redirect to the about us page
+        AboutUsButton.addEventListener("click", function ()
+        {
+            location.href = "about.html";
+        });
 
         // Assigning a variable with the first main tag on the homepage
         let MainContent = document.getElementsByTagName("main")[0];
@@ -39,7 +47,7 @@
 
         // Create an article tag
         let Article = document.createElement("article");
-        let ArticleParagraph= `<p id = "ArticleParagraph" class = "mt-3"> This is my article paragraph</p>`;
+        let ArticleParagraph= `<p id = "ArticleParagraph" class = "mt-3"> This is my article paragraph.</p>`;
         Article.setAttribute("class", "container");
 
         // Add the article attributes inside the article tag
@@ -47,45 +55,80 @@
 
         // Add the article content to the webpage
         DocumentBody.appendChild(Article);
-
-        // Create an event listener for when the user clicks the button
-        // When the user clicks the button, redirect to the about us page
-        AboutUsButton.addEventListener("click", function (){
-            location.href = "about.html";
-        });
     }
 
     function DisplayAboutPage(){
         console.log("Called DisplayAboutPage");
+
+        // Bind the button on the home page to a variable
+        let AboutUsButton = document.getElementById("AboutUsBtn");
+
+        // Create an event listener for when the user clicks the button
+        // When the user clicks the button, redirect to the about us page
+        AboutUsButton.addEventListener("click", function ()
+        {
+            location.href = "about.html";
+        });
     }
 
     function DisplayContactPage(){
         console.log("Called DisplayContactPage");
+
+        // Bind the button on the home page to a variable
+        let AboutUsButton = document.getElementById("AboutUsBtn");
+
+        // Create an event listener for when the user clicks the button
+        // When the user clicks the button, redirect to the about us page
+        AboutUsButton.addEventListener("click", function ()
+        {
+            location.href = "about.html";
+        });
     }
 
     function DisplayProductPage(){
         console.log("Called DisplayProductPage");
+
+        // Bind the button on the home page to a variable
+        let AboutUsButton = document.getElementById("AboutUsBtn");
+
+        // Create an event listener for when the user clicks the button
+        // When the user clicks the button, redirect to the about us page
+        AboutUsButton.addEventListener("click", function ()
+        {
+            location.href = "about.html";
+        });
     }
 
     function DisplayServicesPage(){
         console.log("Called DisplayServicesPage");
+
+        // Bind the button on the home page to a variable
+        let AboutUsButton = document.getElementById("AboutUsBtn");
+
+        // Create an event listener for when the user clicks the button
+        // When the user clicks the button, redirect to the about us page
+        AboutUsButton.addEventListener("click", function ()
+        {
+            location.href = "about.html";
+        });
     }
 
-    function Start(){
-        console.log("App Started...");
+    function Start()
+    {
+        console.log("App Started!");
 
         // Detect what page the user is on based on the HTML title tag
         switch (document.title){
             case "Home":
                 DisplayHomePage();
                 break;
-            case "About":
+            case "About Us":
                 DisplayAboutPage();
                 break;
-            case "Contact":
+            case "Contact Us":
                 DisplayContactPage();
                 break;
-            case "Product":
+            case "Products":
                 DisplayProductPage();
                 break;
             case "Services":
@@ -94,4 +137,5 @@
         }
     }
     window.addEventListener("load", Start);
-})()
+
+})();
