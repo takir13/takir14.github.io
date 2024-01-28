@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Takirul">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Services</title>
+
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><i class="fa-solid fa-people-group"></i> Harmony Hub</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="portfolio.html"><i class="fa-solid fa-briefcase"></i> Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="services.html"><i class="fa-solid fa-concierge-bell"></i> Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="team.html"><i class="fa-solid fa-users"></i> Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html"><i class="fa-solid fa-newspaper"></i> Blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <div class="container">
+        <h1 class="text-center">Our Services</h1>
+        <div class="row justify-content-center">
+            <!-- Accordion layout for the services -->
+            <div class="accordion col-md-8 col-sm-10 col-xs-12" id="service-accordion">
+                <!-- First service -->
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <i class="service-icon fa-solid fa-palette"></i>
+                                <span class="service-title">Web Design</span>
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#service-accordion">
+                        <div class="card-body">
+                            <p class="service-description">We create beautiful and responsive websites that suit your needs and preferences. Whether you need a landing page, a portfolio, a blog, or an e-commerce site, we can design it for you. We use the latest web technologies and frameworks to ensure your website is fast, secure, and user-friendly.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second service -->
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <i class="service-icon fa-solid fa-code"></i>
+                                <span class="service-title">Web Development</span>
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#service-accordion">
+                        <div class="card-body">
+                            <p class="service-description">We develop dynamic and interactive web applications that meet your business goals and expectations. Whether you need a simple calculator, a quiz app, a weather app, or a social network, we can build it for you. We use the best practices and standards to ensure your web application is reliable, scalable, and maintainable.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third service -->
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <i class="service-icon fa-solid fa-search"></i>
+                                <span class="service-title">SEO Optimization</span>
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#service-accordion">
+                        <div class="card-body">
+                            <p class="service-description">We optimize your website for search engines and increase your online visibility and traffic. We use the latest SEO techniques and tools to analyze your website and improve its performance, content, and keywords. We also monitor and report your website's ranking and analytics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer-nav-bar" class="navbar fixed-bottom">
+    </footer>
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
