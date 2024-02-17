@@ -4,17 +4,18 @@
 // AKA - Anonymous Self-Executing Function.
 (function(){
 
-    function CheckLogin(){
-
+    function CheckLogin() {
+        // Change login nav element to logout.
         if(sessionStorage.getItem("user")){
             $("#login").html(`<a id="logout" class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>`);
         }
 
+        // When user clicks logout, clear session storage.
         $("#logout").on("click", function(){
             // Perform logout.
             sessionStorage.clear();
 
-            // Redirect to login.html page.
+            // Redirect to index.html page.
             location.href = "index.html";
         });
     }
@@ -245,7 +246,8 @@
                     location.href = "contact-list.html";
                 });
             }
-                break;
+
+            break;
 
             // Edit operation.
             default:
@@ -290,10 +292,10 @@
             let success = false;
             let newUser = new core.User();
 
-            $.get( "./data/users.json", function (data){
-
+            // Read the users.json file.
+            $.get("./data/users.json", function(data){
+                // Loop through the users.json file.
                 for(const user of data.users){
-
                     console.log(user);
                     // Check if the username and password.
                     if(username.value === user.Username && password.value === user.Password)
@@ -322,11 +324,11 @@
             });
         });
 
+        // Reset form.
         $("#cancelButton").on("click", function () {
             document.forms[0].reset();
             location.href = "index.html";
         });
-
     }
 
     function DisplayRegisterPage(){

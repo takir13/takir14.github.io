@@ -4,7 +4,6 @@
 
     class User
     {
-
         // Default constructor that also accepts parameters.
         constructor(displayName = "", emailAddress = "", username = "", password = "") {
             this._displayName = displayName;
@@ -80,7 +79,6 @@
             this._username = data.Username;
             this._password = data.Password;
         }
-
     }
     core.User = User;
-})(core || (core = {}) );
+})(core || (core = {}));
