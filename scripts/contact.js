@@ -1,3 +1,10 @@
+/*
+ * File: contact.js
+ * Author: Takirul (100862036)
+ * Date completed: February 24, 2024
+ * Description: This file contains the functions and variables related to the contact for the project.
+ */
+
 "use strict";
 
 (function(core){
@@ -5,6 +12,7 @@
     class Contact{
 
         // Default constructor that also accepts parameters.
+
         constructor(fullName = "", contactNumber = "", emailAddress = ""){
             this._fullName = fullName;
             this._contactNumber = contactNumber;
@@ -38,6 +46,7 @@
 
         // Display the Contact information.
         toString(){
+            // Returns the contact object's string representation.
             return `Full Name: ${this._fullName}\n Contact Number: ${this._contactNumber}\n
             Email Address: ${this._emailAddress}\n`;
         }
@@ -47,6 +56,7 @@
          * @returns {null|string}
          */
         serialize(){
+            // Before serialization, check that all properties are not empty.
             if(this._fullName !== "" && this._contactNumber !== "" && this._emailAddress !== ""){
                 return `${this.fullName}, ${this.contactNumber}, ${this.emailAddress}`;
             }
@@ -59,6 +69,7 @@
          * @param data
          */
         deserialize(data){
+            // Splits serialized data and assigns it to the appropriate properties.
             let propertyArray = data.split(",");
             this._fullName = propertyArray[0];
             this._contactNumber = propertyArray[1];

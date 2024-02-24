@@ -45,18 +45,31 @@
                 </div>
 
                 <div class="form-group mb-3">
-                    <span class="input-group-text">Your Message</span>
-                    <input id="message" name="message" class="form-control"
-                           aria-describedby="Message Area" aria-label="Message Area Input">
+                    <span class="input-group-text">Your Comment</span>
+                    <input id="commentArea" name="commentArea" class="form-control"
+                           aria-describedby="Comment Area" aria-label="Comment Area Input" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <span class="input-group-text">Your Experience</span>
+                    <select id="experienceRating" name="experienceRating" class="form-control"
+                            aria-describedby="Experience Rating" aria-label="Experience Rating Input" required>
+                        <option value="">Choose a rating.</option>
+                        <option value="1">1 - Poor</option>
+                        <option value="2">2 - Fair</option>
+                        <option value="3">3 - Great</option>
+                        <option value="4">4 - Very Great</option>
+                        <option value="5">5 - Excellent</option>
+                    </select>
                 </div>
 
                 <div class="form-group mb-3">
                     <input id="subscribeCheckbox" name="subscribeCheckbox" type="checkbox" class="form-check-input">
-                    <label class="form-check-label" for="subscribeCheckbox"> Subscribe to our contact list!</label>
+                    <label class="form-check-label" for="subscribeCheckbox"> Submit my feedback!</label>
                 </div>
 
-                <button id="sendButton" type="submit" class="btn btn-primary">
-                    <i class="fa-solid fa-paper-plane"></i> Send</button>
+                <button id="submitButton" type="submit" class="btn btn-primary">
+                    <i class="fa-solid fa-envelope"></i> Submit</button>
                 <button id="cancelButton" type="reset" class="btn btn-warning">
                     <i class="fa-solid fa-rotate-left"></i> Cancel</button>
             </form>
