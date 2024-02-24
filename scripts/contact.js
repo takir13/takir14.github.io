@@ -12,7 +12,6 @@
     class Contact{
 
         // Default constructor that also accepts parameters.
-
         constructor(fullName = "", contactNumber = "", emailAddress = ""){
             this._fullName = fullName;
             this._contactNumber = contactNumber;

@@ -2,9 +2,8 @@
  * File: app.js
  * Author: Takirul (100862036)
  * Date completed: February 24, 2024
- * Description: This file contains the main JavaScript code for a web application that allows users
- * to contact and subscribe to a service. It also provides features such as a blog, a portfolio, a gallery,
- * and a contact list. The file uses the core module from core.js and the jQuery and Leaflet libraries.
+ * Description: This file contains the main JavaScript code for a web application that allows users to contact
+ * and subscribe to a service. It also provides features such as a blog, a portfolio, a gallery, and a contact list.
  */
 
 "use strict";
@@ -16,7 +15,7 @@
     /**
      * CheckLogin function.
      * This function checks if a user is logged in by checking the session storage.
-     * If a user is logged in, it changes the login navigation element to logout.
+     * If a user is logged in, it changes the login navigation element to logout and shows the username.
      * It also adds an event listener to the logout button to clear the session storage and redirect to the index page when clicked.
      */
     function CheckLogin() {
@@ -62,9 +61,9 @@
      * AjaxRequest function.
      * This function sends an AJAX request to a specified URL and calls a callback function when the request is successful.
      * It uses the XMLHttpRequest object to send the request.
-     * @param {string} method - The HTTP method to use for the request (e.g., "GET", "POST").
+     * @param {string} method - The HTTP method to use for the request.
      * @param {string} url - The URL to send the request to.
-     * @param {function} callback - The function to call when the request is successful. This function takes one parameter: the response text from the server.
+     * @param {function} callback - The function to call when the request is successful.
      */
     function AjaxRequest(method, url, callback){
 
@@ -101,7 +100,7 @@
      * This function validates the contact form by calling the ValidateField function for each form element.
      * It validates the full name, contact number, and email address fields.
      * The validation rules are defined by regular expressions.
-     * If a field does not pass validation, an error message is displayed.
+     * If a field does not pass validation, an error message is shown.
      */
     function ContactFormValidation(){
 
@@ -125,10 +124,10 @@
     function RegistrationFormValidation(){
 
         // Email Address Validation.
-        ValidateField("#emailAddress", /^[a-zA-Z0-9._-]{8,}@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,10}$/,"Please enter an email address length of 8 characters with an @ symbol.");
+        ValidateField("#emailAddress", /^[a-zA-Z0-9._-]{8,}@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,10}$/,"Please enter an email address with a length of 8 characters and an @ symbol.");
 
         // Password Validation.
-        ValidateField("#password", /^.{6,}$/,"Please enter a password length of 6 characters.");
+        ValidateField("#password", /^.{6,}$/,"Please enter a password with a length of 6 characters.");
     }
 
     /**
@@ -173,14 +172,14 @@
             // Create a unique key for the contact.
             let key = contact.fullName.substring(0,1) + Date.now();
 
-            // Store the serialized contact in localStorage with the generated key.
+            // Store the serialized contact in localStorage with the created key.
             localStorage.setItem(key, contact.serialize());
         }
     }
 
     /**
-     * Function that runs when the user is on the home page.
-     * This function currently logs a message to the console for debugging purposes.
+     * DisplayHomePage function.
+     * This function currently logs a message to the console.
      */
     function DisplayHomePage(){
         console.log("Home Page");
@@ -188,7 +187,7 @@
     }
 
     /**
-     * Function that runs when the user is on the blog page.
+     * DisplayBlogPage function.
      * This function logs a message to the console, fetches blog content from a JSON file,
      * parses the response, and dynamically adds each blog post to the page.
      */
@@ -219,7 +218,7 @@
     }
 
     /**
-     * Function that runs when the user is on the contact page.
+     * DisplayContactPage function.
      * This function logs a message to the console, validates the contact form,
      * and sets up an event listener for the submit button. If the subscribe checkbox is checked,
      * it collects the form data and sends an AJAX request to the server.
@@ -230,10 +229,9 @@
         // Validate the contact form.
         ContactFormValidation();
 
-        // Get references to the form elements.
+        // Get the input elements from the contact form.
         let submitButton = document.getElementById("submitButton");
         let subscribeCheckbox = document.getElementById("subscribeCheckbox");
-
         let fullName = document.getElementById("fullName");
         let contactNumber = document.getElementById("contactNumber");
         let emailAddress = document.getElementById("emailAddress");
@@ -244,8 +242,7 @@
         submitButton.addEventListener("click", function(){
             // Check if the subscribe checkbox is checked.
             if(subscribeCheckbox.checked){
-
-                // Prepare the form data for the AJAX request.
+                // Get the data ready to deliver with the AJAX request.
                 let formData = {
                     "fullName": fullName.value,
                     "contactNumber": contactNumber.value,
@@ -258,22 +255,22 @@
                 $.ajax({
                     type: "POST",
                     url: "feedback.php",
-                    data: formData
-                })
-                    .done(function(response) {
-                        // This function logs a success message and the server's response to the console.
+                    data: formData,
+                    success: function(response){
+                        // Show a success message on the console.
                         console.log("Successfully submitted feedback form:", response);
-                    })
-                    .fail(function(jqXHR, textStatus, errorThrown) {
-                        // This function logs an error message and the error details to the console.
-                        console.error("Failed to submit feedback form:", textStatus, errorThrown);
-                    });
+                    },
+                    error: function(xhr, status, error){
+                        // Show an error message on the console.
+                        console.error("Failed to submit feedback form:", xhr, status, error);
+                    }
+                });
             }
         });
     }
 
     /**
-     * Function that runs when the user is on the contact list page.
+     * DisplayContactListPage function.
      * This function logs a message to the console, checks if there are any contacts in localStorage,
      * and if there are, it creates a table row for each contact and adds it to the contact list on the page.
      * It also sets up event listeners for the add, edit, and delete buttons.
@@ -283,7 +280,7 @@
 
         // Check if there are any contacts in localStorage.
         if(localStorage.length > 0){
-            // Get a reference to the contact list element on the page.
+            // Get a reference from the contact list element on the page.
             let contactList = document.getElementById("contactList");
             let data = "";
 
@@ -317,7 +314,7 @@
                             </button>
                         </td>
                         </tr>`;
-                // Increment the index.
+                // Increase the index value.
                 index++;
             }
             // Add the data string to the contact list element.
@@ -345,8 +342,8 @@
     }
 
     /**
-     * Function that runs when the user is on the portfolio page.
-     * This function currently logs a message to the console for debugging purposes.
+     * DisplayPortfolioPage function.
+     * This function currently logs a message to the console.
      */
     function DisplayPortfolioPage(){
         console.log("Portfolio Page");
@@ -354,7 +351,7 @@
     }
 
     /**
-     * Function that initializes a map on the page.
+     * InitializeMap function.
      * This function creates a map, sets its view to a preferred geographical coordinates and zoom level,
      * adds an OpenStreetMap tile layer to the map, includes a marker in the community center,
      * and adds a circle to represent local facilities.
@@ -384,8 +381,8 @@
     }
 
     /**
-     * Function that runs when the user is on the services page.
-     * This function logs a message to the console for debugging purposes and initializes a map on the page.
+     * DisplayServicesPage function.
+     * This function logs a message to the console and initializes a map on the page.
      */
     function DisplayServicesPage(){
         console.log("Services Page");
@@ -395,7 +392,7 @@
     }
 
     /**
-     * Function that runs when the user is on the edit page.
+     * DisplayEditPage function.
      * This function logs a message to the console, validates the contact form,
      * and sets up an event listener for the submit and cancel buttons.
      * Depending on the page state (add or edit), it either adds a new contact or updates an existing one.
@@ -412,7 +409,7 @@
             // Add a new user.
             case "add":
             {
-                // Refactor the edit page to an add page.
+                // Refactor the edit page into an add page.
                 $("main>h1").text("Add Contact");
                 $("#editButton").html(`<i class="fa fa-plus fa-sm"></i> Add`);
                 $("#editButton").on("click", (event)=> {
@@ -468,11 +465,11 @@
     }
 
     /**
-     * Function that runs when the user is on the login page.
+     * DisplayLoginPage function.
      * This function logs a message to the console, sets up an event listener for the login and clear buttons.
      * When the login button is clicked, it checks the entered username and password against a list of users,
      * and if a match is found, it logs the user in and redirects them to the contact list page.
-     * If no match is found, it displays an error message.
+     * If no match is found, it shows an error message.
      * When the clear button is clicked, it resets the form and hides any error messages.
      */
     function DisplayLoginPage(){
@@ -510,12 +507,12 @@
                     // Hide any error messages.
                     messageArea.removeAttr("class").hide();
 
-                    // Confirm the login with the user and, if confirmed, redirect them to the secure area of the site.
+                    // Show a welcome message.
                     if(confirm("Welcome back, " + newUser.displayName + "!")) {
                         location.href = "contact-list.html";
                     }
                 }else{
-                    // If no matching user was found, display an error message.
+                    // If no matching user was found, show an error message.
                     $("#username").trigger("focus").trigger("select");
                     messageArea
                         .addClass("alert alert-danger")
@@ -534,11 +531,11 @@
 
     /**
      * DisplayRegisterPage function
-     * This function is responsible for displaying the registration page and handling the registration process.
+     * This function is responsible for handling the registration process.
      * It validates the registration form inputs and registers a new user if the inputs are valid.
      */
     function DisplayRegisterPage() {
-        console.log("Displaying Register Page");
+        console.log("Register Page");
 
         // Validate the registration form inputs.
         RegistrationFormValidation();
@@ -559,7 +556,7 @@
                 event.preventDefault();
                 messageArea
                     .addClass("alert alert-danger")
-                    .text("Error: Email must be at least 8 characters and password must be at least 6 characters.")
+                    .text("Error: Email address must be at least 8 characters long, and password must be at least 6 characters long.")
                     .show();
             }
             // Check if the password matches the confirm password.
@@ -568,18 +565,19 @@
                 event.preventDefault();
                 messageArea
                     .addClass("alert alert-danger")
-                    .text("Error: Password does not match with Confirm Password.")
+                    .text("Error: Password does not match the confirm password.")
                     .show();
             }
+            // Otherwise, create a new user object.
             else {
                 // Prevent form submission.
                 event.preventDefault();
 
                 // Create a new instance of the User class with the input values.
-                let user = new core.User("", emailAddress.value, username.value, "");
+                let newUser = new core.User("", emailAddress.value, username.value, "");
 
                 // Use the localStorage API to save the user object as a JSON string.
-                localStorage.setItem("user", JSON.stringify(user));
+                localStorage.setItem("user", JSON.stringify(newUser));
 
                 // Redirect to the login page.
                 location.href = "login.html";
@@ -598,9 +596,8 @@
 
     /**
      * DisplayEventsPage function
-     * This function is responsible for displaying the events page.
-     * It uses AJAX to dynamically load the events content from a JSON file.
-     * The events data is then parsed and each event is displayed on the page.
+     * This function uses AJAX to dynamically load the events content from a JSON file.
+     * The events data is then parsed and each event is shown on the page.
      */
     function DisplayEventsPage()
     {
@@ -629,9 +626,8 @@
 
     /**
      * DisplayGalleryPage function
-     * This function is responsible for displaying the gallery page.
-     * It uses AJAX to dynamically load the gallery content from a JSON file.
-     * The gallery data is then parsed and each image is displayed on the page.
+     * This function uses AJAX to dynamically load the gallery content from a JSON file.
+     * The gallery data is then parsed and each image is shown on the page.
      * After displaying all images, it activates the lightbox plugin script.
      */
     function DisplayGalleryPage()
@@ -666,7 +662,7 @@
      * This function is responsible for starting the application.
      * It first logs a message to the console, then makes an AJAX request to load the header.
      * After that, it checks the title of the document to determine which page the user is on,
-     * and calls the appropriate function to display that page.
+     * and calls the appropriate function to show that page.
      */
     function Start()
     {

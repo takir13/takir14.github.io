@@ -19,7 +19,7 @@
             this._password = password;
         }
 
-        // Each property has its own getter and setter.
+        // Setters and Getters.
         get displayName() {
             return this._displayName;
         }
