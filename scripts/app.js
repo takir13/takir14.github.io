@@ -25,7 +25,7 @@
             $("#login").html(`<a id="logout" class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>`);
 
             // Show the username between the Contact Us and Logout buttons.
-            $("#login").before(`<li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-user"></i> ${sessionStorage.getItem("user").split(",")[0]}</a></li>`);
+            $("#login").before(`<li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-user"></i> ${sessionStorage.getItem("user").split(",")[2]}</a></li>`);
         }
 
         // Add an event listener to the logout button.
@@ -526,6 +526,7 @@
         $("#clearButton").on("click", function () {
             document.forms[0].reset();
             messageArea.removeAttr("class").hide();
+            $("#username").trigger("focus").trigger("select");
         });
     }
 
