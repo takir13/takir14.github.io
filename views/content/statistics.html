@@ -1,0 +1,59 @@
+<h1 class="mb-5"> Statistics</h1>
+
+<div class="chart-container" style="position: relative; height:40vh; width:80vw">
+    <canvas id="myChart"></canvas>
+</div>
+
+<script>
+    // Fetch the statistics data from a JSON file
+    $.getJSON("./data/statistics.json", function(data) {
+
+        const labels = data.map(stat => stat.date);
+        const visitsData = data.map(stat => stat.visits);
+        const uniqueVisitorsData = data.map(stat => stat.uniqueVisitors);
+        const pageViewsData = data.map(stat => stat.pageViews);
+
+        // Create the chart using Chart.js
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Visits',
+                        data: visitsData,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Unique Visitors',
+                        data: uniqueVisitorsData,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Page Views',
+                        data: pageViewsData,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }).fail(function () {
+        console.error("Could not load the statistics data.");
+    });
+</script>

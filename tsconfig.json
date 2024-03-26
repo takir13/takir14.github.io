@@ -12,11 +12,7 @@
     "strictPropertyInitialization": true,
     "noImplicitThis": true,
     "alwaysStrict": true,
-    "noImplicitReturns": true,
-    "esModuleInterop": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "moduleResolution": "Node"
+    "noImplicitReturns": true
   },
   "exclude": [
     "node_modules"

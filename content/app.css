@@ -48,3 +48,61 @@
     border-radius: .4em;
     width: 100%;
 }
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+    #eventList {
+        padding: 0;
+        list-style-type: none;
+    }
+
+    #eventList li {
+        margin-bottom: 15px;
+        border: 3px solid #ddd;
+        padding: 10px;
+    }
+
+    #eventList h3 {
+        margin-top: 0;
+    }
+
+    .remove-btn {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    #eventList {
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #eventList li {
+        flex: 1 1 calc(50% - 20px);
+        margin: 10px;
+        border: 3px solid #ddd;
+        padding: 10px;
+    }
+
+    #eventList h3 {
+        margin-top: 0;
+    }
+
+    .remove-btn {
+        display: block;
+        width: auto;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,41 @@
+<h1 class="mb-5"> Event Planning</h1>
+<div id="messageArea"></div>
+
+<div class="row justify-content-lg-center g-3">
+    <form id="eventForm" class="col-lg-6 col-md-10 col-sm-10">
+
+        <div class="form-group mb-3">
+            <span class="input-group-text">Event Title</span>
+            <input id="eventTitle" name="eventTitle" type="text" class="form-control"
+                   aria-describedby="Event Title" aria-label="Event Title Input" required>
+        </div>
+
+        <div class="form-group mb-3">
+            <span class="input-group-text">Event Date</span>
+            <input id="eventDate" name="eventDate" type="date" class="form-control"
+                   aria-describedby="Event Date" aria-label="Event Date Input" required>
+        </div>
+
+        <div class="form-group mb-3">
+            <span class="input-group-text">Event Description</span>
+            <textarea id="eventDescription" name="eventDescription" type="text" class="form-control"
+                   aria-describedby="Event Description" aria-label="Event Description Input" required></textarea>
+        </div>
+
+        <button id="addEventButton" type="submit" class="btn btn-success">
+            <i class="fa-solid fa-circle-plus"></i> Add Event
+        </button>
+
+        <button id="clearButton" type="reset" class="btn btn-warning">
+            <i class="fa-solid fa-eraser"></i> Clear
+        </button>
+
+        <button id="removeAllButton" type="reset" class="btn btn-danger">
+            <i class="fa-solid fa-calendar-xmark"></i> Remove All
+        </button>
+
+    </form>
+</div>
+
+<!-- Event List -->
+<ul id="eventList"></ul>

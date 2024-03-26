@@ -13,8 +13,7 @@ namespace core {
         private _password:string;
 
         // Default constructor that also accepts parameters.
-        constructor(displayName:string = "", emailAddress:string = "",
-                    username:string = "", password:string = "") {
+        constructor(displayName:string = "", emailAddress:string = "", username:string = "", password:string = "") {
             this._displayName = displayName;
             this._emailAddress = emailAddress;
             this._username = username;

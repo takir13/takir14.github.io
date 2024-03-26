@@ -29,7 +29,7 @@
             $(this).css("cursor", "pointer");
         });
     }
-    function LoadLink(link, data = "") {
+    function LoadLink(link = "home", data = "") {
         router.ActiveLink = link;
         AuthGuard();
         router.LinkData = data;
@@ -42,21 +42,34 @@
         LoadContent();
     }
     function AuthGuard() {
-        let protected_routes = ["contact-list"];
+        let protected_routes = ["contact-list", "statistics", "event-planning"];
         if (protected_routes.indexOf(router.ActiveLink) > -1) {
             if (!sessionStorage.getItem("user")) {
                 router.ActiveLink = "login";
+                alert("User is not authenticated. Sign in to access this page.");
             }
         }
     }
     function CheckLogin() {
         if (sessionStorage.getItem("user")) {
             $("#login").html(`<a id="logout" class="nav-link" href="#"><i class="fas fa-undo"></i> Logout</a>`);
+            if ($("ul.navbar-nav li a[data='statistics']").length === 0) {
+                let statisticsNavItem = `<li class="nav-item"><a class="nav-link" data="statistics"><i class="fa-solid fa-chart-line"></i> Statistics</a></li>`;
+                $("ul.navbar-nav").append(statisticsNavItem);
+            }
+            if ($("ul.navbar-nav li a[data='event-planning']").length === 0) {
+                let eventPlanningNavItem = `<li class="nav-item"><a class="nav-link" data="event-planning"><i class="fa-solid fa-calendar-plus"></i> Event Planning</a></li>`;
+                $("ul.navbar-nav").append(eventPlanningNavItem);
+            }
+            AddNavigationEvents();
         }
-        $("#logout").on("click", function () {
+        $(document).on("click", "#logout", function () {
             sessionStorage.clear();
             $("#login").html(`<a class="nav-link" data="login"><i class="fas fa-sign-in-alt"></i> Login</a>`);
+            $("li a[data='statistics']").parent().remove();
+            $("li a[data='event-planning']").parent().remove();
             LoadLink("home");
+            AddNavigationEvents();
         });
     }
     function ContactFormValidation() {
@@ -84,24 +97,14 @@
             localStorage.setItem(key, contact.serialize());
         }
     }
-    function DisplayHomePage() {
-        console.log("Home Page");
-        $("#AboutUsBtn").on("click", () => {
-            LoadLink("about");
-        });
-        $("main").append(`<p id="MainParagraph"
-                                class="mt-3">This is my first paragraph</p>`);
-        $("main").append(`<article class="container">
-                                <p id="ArticleParagraph" class="mt-3">This is my article paragraph</p></article>`);
+    function DisplayHome() {
+        console.log("Home");
     }
-    function DisplayAboutPage() {
-        console.log("About Us Page");
-        $("#AboutUsBtn").on("click", () => {
-            LoadLink("about");
-        });
+    function DisplayPortfolio() {
+        console.log("Portfolio");
     }
-    function DisplayContactPage() {
-        console.log("Contact Us Page");
+    function DisplayContact() {
+        console.log("Contact Us");
         $("a[data='contact-list']").off("click");
         $("a[data='contact-list']").on("click", function () {
             LoadLink("contact-list");
@@ -118,8 +121,8 @@
             }
         });
     }
-    function DisplayContactListPage() {
-        console.log("Contact List Page");
+    function DisplayContactList() {
+        console.log("Contact List");
         if (localStorage.length > 0) {
             let contactList = document.getElementById("contactList");
             let data = "";
@@ -156,26 +159,31 @@
             LoadLink("edit", $(this).val());
         });
         $("button.delete").on("click", function () {
-            if (confirm("Confirm contact Delete?")) {
+            if (confirm("Delete contact, are you sure?")) {
                 localStorage.removeItem($(this).val());
             }
             LoadLink("contact-list");
         });
     }
-    function DisplayProductPage() {
-        console.log("Product Page");
-        $("#AboutUsBtn").on("click", () => {
-            LoadLink("about");
+    function DisplayTeam() {
+        console.log("Team");
+    }
+    function DisplayBlog() {
+        console.log("Blog");
+        $("a[data='statistics']").off("click");
+        $("a[data='statistics']").on("click", function () {
+            LoadLink("statistics");
+        });
+        $("a[data='event-planning']").off("click");
+        $("a[data='event-planning']").on("click", function () {
+            LoadLink("event-planning");
         });
     }
-    function DisplayServicesPage() {
-        console.log("Services Page");
-        $("#AboutUsBtn").on("click", () => {
-            LoadLink("about");
-        });
+    function DisplayServices() {
+        console.log("Services");
     }
-    function DisplayEditPage() {
-        console.log("Edit Page");
+    function DisplayEdit() {
+        console.log("Edit");
         ContactFormValidation();
         let page = router.LinkData;
         switch (page) {
@@ -218,15 +226,15 @@
                 break;
         }
     }
-    function DisplayLoginPage() {
-        console.log("Login Page");
+    function DisplayLogin() {
+        console.log("Login");
+        AddLinkEvents("register");
         let messageArea = $("#messageArea");
         $("#loginButton").on("click", function () {
             let success = false;
             let newUser = new core.User();
             $.get("./data/users.json", function (data) {
                 for (const user of data.users) {
-                    console.log(user);
                     let username = document.forms[0].username.value;
                     let password = document.forms[0].password.value;
                     if (username === user.Username && password === user.Password) {
@@ -249,30 +257,113 @@
                 }
             });
         });
-        $("#cancelButton").on("click", function () {
+        $("#clearButton").on("click", function () {
             document.forms[0].reset();
-            LoadLink("home");
+            messageArea.removeAttr("class").hide();
+            $("#username").trigger("focus").trigger("select");
         });
     }
-    function DisplayRegisterPage() {
-        console.log("Register Page");
+    function DisplayStatistics() {
+        console.log("Statistics");
+    }
+    function DisplayEventPlanning() {
+        console.log("Event Planning");
+        let events = JSON.parse(localStorage.getItem('events') || '[]');
+        function addEvent(title, date, description) {
+            const newEvent = {
+                id: `event-${Date.now()}`,
+                title,
+                date,
+                description
+            };
+            events.push(newEvent);
+            localStorage.setItem('events', JSON.stringify(events));
+            updateEventList();
+        }
+        function removeEvent(eventId) {
+            events = events.filter(event => event.id !== eventId);
+            localStorage.setItem('events', JSON.stringify(events));
+            updateEventList();
+        }
+        function removeAllEvent() {
+            events = [];
+            localStorage.setItem('events', JSON.stringify(events));
+            updateEventList();
+        }
+        function updateEventList() {
+            const eventListElement = document.getElementById('eventList');
+            if (eventListElement) {
+                eventListElement.innerHTML = '';
+                events.forEach(event => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `
+                <h3>${event.title}</h3>
+                <p>Date: ${event.date}</p>
+                <p>${event.description}</p>
+                <button class="btn btn-danger remove-btn" data-event-id="${event.id}">
+                    <i class="fa-solid fa-trash"></i> Remove
+                </button>
+            `;
+                    eventListElement.appendChild(listItem);
+                });
+            }
+        }
+        document.getElementById('eventList')?.addEventListener('click', function (event) {
+            const target = event.target;
+            if (target.classList.contains('remove-btn')) {
+                const eventId = target.getAttribute('data-event-id');
+                if (eventId && confirm("Remove event details, are you sure?")) {
+                    removeEvent(eventId);
+                }
+            }
+        });
+        document.getElementById('removeAllButton')?.addEventListener('click', function () {
+            if (events.length === 0) {
+                alert("There are no event details to remove.");
+            }
+            else {
+                if (confirm("Remove all event details, are you sure?")) {
+                    removeAllEvent();
+                }
+            }
+        });
+        function handleEventFormSubmit(event) {
+            event.preventDefault();
+            const titleInput = document.getElementById('eventTitle');
+            const dateInput = document.getElementById('eventDate');
+            const descriptionInput = document.getElementById('eventDescription');
+            if (titleInput && dateInput && descriptionInput) {
+                addEvent(titleInput.value, dateInput.value, descriptionInput.value);
+                titleInput.value = '';
+                dateInput.value = '';
+                descriptionInput.value = '';
+            }
+        }
+        document.getElementById('eventForm')?.addEventListener('submit', handleEventFormSubmit);
+        updateEventList();
+    }
+    function DisplayRegister() {
+        console.log("Register");
         AddLinkEvents("login");
     }
-    function Display404Page() {
-        console.log("404 Page");
+    function Display404() {
+        console.log("404");
     }
     function ActiveLinkCallback() {
         switch (router.ActiveLink) {
-            case "home": return DisplayHomePage;
-            case "about": return DisplayAboutPage;
-            case "contact": return DisplayContactPage;
-            case "contact-list": return DisplayContactListPage;
-            case "products": return DisplayProductPage;
-            case "services": return DisplayServicesPage;
-            case "register": return DisplayRegisterPage;
-            case "login": return DisplayLoginPage;
-            case "edit": return DisplayEditPage;
-            case "404": return Display404Page;
+            case "home": return DisplayHome;
+            case "portfolio": return DisplayPortfolio;
+            case "services": return DisplayServices;
+            case "team": return DisplayTeam;
+            case "blog": return DisplayBlog;
+            case "contact": return DisplayContact;
+            case "login": return DisplayLogin;
+            case "statistics": return DisplayStatistics;
+            case "event-planning": return DisplayEventPlanning;
+            case "register": return DisplayRegister;
+            case "contact-list": return DisplayContactList;
+            case "edit": return DisplayEdit;
+            case "404": return Display404;
             default:
                 console.log("ERROR: callback function does not exist " + router.ActiveLink);
                 return new Function();

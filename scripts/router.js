@@ -50,13 +50,16 @@ let router = new core.Router();
 router.AddTable([
     "/",
     "/home",
-    "/about",
+    "/portfolio",
     "/services",
-    "/products",
+    "/team",
+    "/blog",
     "/contact",
-    "/contact-list",
     "/login",
+    "/statistics",
+    "/event-planning",
     "/register",
+    "/contact-list",
     "/edit"
 ]);
 let route = location.pathname;

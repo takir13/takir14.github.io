@@ -13,7 +13,7 @@
                     </i>
                   </span>
                         <input type="text" class="form-control" id="username" name="username"  required
-                               value="" placeholder="Enter your username">
+                               autocomplete="username" placeholder="Enter your username">
                     </div>
 
                 </div>
@@ -25,22 +25,22 @@
                     </i>
                   </span>
                         <input type="password" class="form-control" id="password" name="password"  required
-                               value="" placeholder="Enter your password">
+                               autocomplete="current-password" placeholder="Enter your password">
                     </div>
 
                 </div>
                 <div class="text-end">
                     <button id="loginButton" type="button" class="btn btn-primary btn-lg">
                         <i class="fas fa-sign-in-alt"></i> Login</button>
-                    <button id="cancelButton" type="button" class="btn btn-warning btn-lg">
-                        <i class="fas fa-undo"></i> Cancel</button>
+                    <button id="clearButton" type="button" class="btn btn-warning btn-lg">
+                        <i class="fas fa-undo"></i> Clear</button>
                 </div>
             </form>
 
         </div>
         <p class="text-center text-muted small">
             Don't have an account?
-            <a data="register">Register Here!</a>
+            <a class="link" data="register">Register Here!</a>
         </p>
     </div>
 </div>

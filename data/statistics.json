@@ -1,0 +1,86 @@
+[
+  {
+    "date": "2024-03-01",
+    "visits": 150,
+    "uniqueVisitors": 100,
+    "pageViews": 300
+  },
+  {
+    "date": "2024-03-02",
+    "visits": 200,
+    "uniqueVisitors": 150,
+    "pageViews": 400
+  },
+  {
+    "date": "2024-03-03",
+    "visits": 220,
+    "uniqueVisitors": 160,
+    "pageViews": 450
+  },
+  {
+    "date": "2024-03-04",
+    "visits": 180,
+    "uniqueVisitors": 140,
+    "pageViews": 360
+  },
+  {
+    "date": "2024-03-05",
+    "visits": 240,
+    "uniqueVisitors": 190,
+    "pageViews": 480
+  },
+  {
+    "date": "2024-03-06",
+    "visits": 260,
+    "uniqueVisitors": 210,
+    "pageViews": 520
+  },
+  {
+    "date": "2024-03-07",
+    "visits": 300,
+    "uniqueVisitors": 250,
+    "pageViews": 600
+  },
+  {
+    "date": "2024-03-08",
+    "visits": 320,
+    "uniqueVisitors": 270,
+    "pageViews": 640
+  },
+  {
+    "date": "2024-03-09",
+    "visits": 310,
+    "uniqueVisitors": 260,
+    "pageViews": 620
+  },
+  {
+    "date": "2024-03-10",
+    "visits": 330,
+    "uniqueVisitors": 280,
+    "pageViews": 660
+  },
+  {
+    "date": "2024-03-11",
+    "visits": 340,
+    "uniqueVisitors": 290,
+    "pageViews": 680
+  },
+  {
+    "date": "2024-03-12",
+    "visits": 350,
+    "uniqueVisitors": 300,
+    "pageViews": 700
+  },
+  {
+    "date": "2024-03-13",
+    "visits": 360,
+    "uniqueVisitors": 310,
+    "pageViews": 720
+  },
+  {
+    "date": "2024-03-14",
+    "visits": 370,
+    "uniqueVisitors": 320,
+    "pageViews": 740
+  }
+]
