@@ -4,14 +4,14 @@
 // AKA - Anonymous Self-Executing Function.
 (function(){
 
-    function addAboutUsButtonListener(){
+    function addAboutMeButtonListener(){
 
         // Bind the button on the home page to a variable.
-        let AboutUsButton = document.getElementById("AboutUsBtn");
+        let AboutMeButton = document.getElementById("AboutMeBtn");
 
         // Create an event listener for when the user clicks the button.
         // When the user clicks the button, redirect to the about us page.
-        AboutUsButton.addEventListener("click", function ()
+        AboutMeButton.addEventListener("click", function ()
         {
             location.href = "about.html";
         });
@@ -20,7 +20,7 @@
     // Functions that run when the user is on that page.
     function DisplayHomePage() {
         console.log("Called DisplayHomePage");
-        addAboutUsButtonListener();
+        addAboutMeButtonListener();
 
         // Assigning a variable with the first main tag on the homepage.
         let MainContent = document.getElementsByTagName("main")[0];
@@ -64,22 +64,22 @@
 
     function DisplayAboutPage(){
         console.log("Called DisplayAboutPage");
-        addAboutUsButtonListener();
+        addAboutMeButtonListener();
     }
 
     function DisplayContactPage(){
         console.log("Called DisplayContactPage");
-        addAboutUsButtonListener();
+        addAboutMeButtonListener();
     }
 
     function DisplayProductPage(){
         console.log("Called DisplayProductPage");
-        addAboutUsButtonListener();
+        addAboutMeButtonListener();
     }
 
     function DisplayServicesPage(){
         console.log("Called DisplayServicesPage");
-        addAboutUsButtonListener();
+        addAboutMeButtonListener();
     }
 
     function Start()
