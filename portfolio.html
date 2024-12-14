@@ -78,47 +78,9 @@
                         <p class="card-text">
                             In Lab 2, "XML and Related Technologies," I gained an in-depth understanding of how XML is structured and used to store and transport data. I explored the creation and validation of XML documents using Document Type Definitions (DTD), learning to define elements and attributes to ensure data consistency and integrity. By working with XML, DTD code, and validation processes, I developed a solid grasp of how XML plays a crucial role in data representation, particularly in mobile development. This lab highlighted the importance of adhering to standards and best practices to facilitate accurate data exchange and integration across different systems.
                         </p>
-                        <p>Code Snippets (DTD)</p>
-                        <pre><code>
-&lt;!ELEMENT events (organization, event+)&gt;
-&lt;!ELEMENT organization (orgname, orglogo, website?, socialmedia*)&gt;
-&lt;!ELEMENT orgname (#PCDATA)&gt;
-&lt;!ELEMENT orglogo (#PCDATA)&gt;
-&lt;!ELEMENT website (#PCDATA)&gt;
-&lt;!ELEMENT socialmedia (#PCDATA)&gt;
-
-&lt;!ELEMENT event (eventname, date, hosts, participants, resources, feedback*)&gt;
-&lt;!ATTLIST event eventID ID #REQUIRED&gt;
-&lt;!ELEMENT eventname (#PCDATA)&gt;
-&lt;!ELEMENT date (#PCDATA)&gt;
-&lt;!ATTLIST date start CDATA #REQUIRED end CDATA #REQUIRED&gt;
-
-&lt;!ELEMENT hosts (host+)&gt;
-&lt;!ELEMENT host (name, contact)&gt;
-&lt;!ATTLIST host hostID ID #REQUIRED&gt;
-&lt;!ELEMENT name (firstname, lastname)&gt;
-&lt;!ELEMENT firstname (#PCDATA)&gt;
-&lt;!ELEMENT lastname (#PCDATA)&gt;
-&lt;!ELEMENT contact (phone, email)&gt;
-&lt;!ELEMENT phone (#PCDATA)&gt;
-&lt;!ELEMENT email (#PCDATA)&gt;
-
-&lt;!ELEMENT participants (participant+)&gt;
-&lt;!ELEMENT participant (name, role, contact)&gt;
-&lt;!ELEMENT role (#PCDATA)&gt;
-
-&lt;!ELEMENT resources (venue, equipment*, catering?)&gt;
-&lt;!ELEMENT venue (location, capacity)&gt;
-&lt;!ELEMENT location (#PCDATA)&gt;
-&lt;!ELEMENT capacity (#PCDATA)&gt;
-&lt;!ELEMENT equipment (#PCDATA)&gt;
-&lt;!ELEMENT catering (details)&gt;
-&lt;!ELEMENT details (#PCDATA)&gt;
-
-&lt;!ELEMENT feedback (comment)&gt;
-&lt;!ATTLIST feedback feedbackID ID #REQUIRED&gt;
-&lt;!ELEMENT comment (#PCDATA)&gt;
-                        </code></pre>
+                        <p>XML File Screenshots</p>
+                        <img src="images/lab2screenshot1.png" alt="Lab 2 Screenshot 1" class="img-fluid my-2">
+                        <img src="images/lab2screenshot1.png" alt="Lab 2 Screenshot 2" class="img-fluid my-2">
                     </div>
                 </div>
             </div>
@@ -361,7 +323,7 @@ class MyApp extends StatelessWidget {
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Classwork 1</h5>
-                    <p class="card-text">Creating a first mobile application in Android Studio.</p>
+                    <p class="card-text">Creating a first mobile app in Android Studio.</p>
                     <a href="#classwork1Details" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="classwork1Details" class="btn btn-primary">View More</a>
                     <div class="collapse collapse-content" id="classwork1Details">
                         <p class="card-text">
@@ -376,11 +338,11 @@ class MyApp extends StatelessWidget {
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Classwork 2</h5>
-                    <p class="card-text">Designing a mobile application with Mit App Inventor.</p>
+                    <p class="card-text">Designing a mobile app with Mit App Inventor.</p>
                     <a href="#classwork2Details" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="classwork2Details" class="btn btn-primary">View More</a>
                     <div class="collapse collapse-content" id="classwork2Details">
                         <p class="card-text">
-                            In classwork 2, “MIT APP Inventor: App Development,” I faced several challenges and learned many things during creating my app on Healthy Meal Planner. At first, I struggled to navigate between screens. It took careful focus on how buttons and logic blocks were connected. After that, it took several drafts to ensure users could enter meal details, view details, and clear details. I was able to understand how to use logical blocks effectively to manage user inputs and outputs. Maintaining a consistent design idea across two screens was challenging, but I learned how to properly add colours and fonts. I got skilled in using several input types, which helped me understand user interactions in apps. The classwork gave me practical experience with logic blocks, helping me know how to build active functionality according to user input. Overall, it caught my interest in food and health, motivating me to keep learning the connection between technology and health.
+                            In classwork 2, “MIT APP Inventor: App Development,” I faced several challenges and learned many things while creating my app on Healthy Meal Planner. At first, I struggled to navigate between screens. It took careful focus on how buttons and logic blocks were connected. After that, it took several drafts to ensure users could enter meal details, view details, and clear details. I was able to understand how to use logical blocks effectively to manage user inputs and outputs. Maintaining a consistent design idea across two screens was challenging, but I learned how to properly add colours and fonts. I got skilled in using several input types, which helped me understand user interactions in apps. The classwork gave me practical experience with logic blocks, helping me know how to build active functionality according to user input. Overall, it caught my interest in food and health, motivating me to keep learning the connection between technology and health.
                         </p>
                     </div>
                 </div>
@@ -395,7 +357,7 @@ class MyApp extends StatelessWidget {
                     <a href="#classwork3Details" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="classwork3Details" class="btn btn-primary">View More</a>
                     <div class="collapse collapse-content" id="classwork3Details">
                         <p class="card-text">
-                            In classwork 3, “Flutter: App Development,” moving from Android Studio to Flutter was both hard and fun. Using XML for layout design in Android Studio might be useful, but it can also be tedious and complicated for advanced interfaces. The challenges I faced were changing to the Dart programming language and Flutter's widget architecture and learning the widget tree structure. The advantages are Flutter helps cross-platform development, hot reloading for fast changes, and a big collection of already built widgets, and Android Studio gives full design tools, improved interaction with specific Android tools, and strong debugging features. The disadvantages are Flutter needs understanding new structures and language, and Android Studio's user interface build step is more complicated and takes time. While Android Studio's extensive tools make it suitable for making specific Android applications, Flutter's multi-platform support and fast creation step make it an outstanding option for programmers who want to rapidly make apps for many platforms.
+                            In classwork 3, “Flutter: App Development,” moving from Android Studio to Flutter was both hard and fun. Using XML for layout design in Android Studio might be useful, but it can also be tedious and complicated for advanced interfaces. The challenges I faced were changing to the Dart programming language and Flutter's widget architecture and learning the widget tree structure. The advantages are that Flutter helps cross-platform development, hot reloading for fast changes, and a big collection of already built widgets, and Android Studio gives full design tools, improved interaction with specific Android tools, and strong debugging features. The disadvantages are that Flutter needs understanding new structures and language, and Android Studio's user interface build step is more complicated and takes time. While Android Studio's extensive tools make it suitable for making specific Android applications, Flutter's multi-platform support and fast creation step make it an outstanding option for programmers who want to rapidly make apps for many platforms.
                         </p>
                     </div>
                 </div>
@@ -413,11 +375,11 @@ class MyApp extends StatelessWidget {
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Project</h5>
-                    <p class="card-text">An engaging, cross-platform mobile puzzle game created using Flutter.</p>
+                    <p class="card-text">Engaging and cross-platform mobile puzzle game using Flutter.</p>
                     <a href="#projectDetails" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="projectDetails" class="btn btn-primary">View More</a>
                     <div class="collapse collapse-content" id="projectDetails">
                         <p class="card-text">
-                            As the UI/UX Designer for the AmazStar Puzzle project, I deepened my understanding of crafting user-centered interfaces that are both visually appealing and intuitive. This project sharpened my skills in creating responsive designs that adapt seamlessly across various devices. Collaborating with my team, I learned how to effectively integrate front-end and back-end components, ensuring a cohesive user experience. The experience of deploying the app as a functional .apk file for Android further enhanced my technical prowess and appreciation for mobile development. Overall, this project has been instrumental in refining my skills in design, teamwork, and project management, preparing me for future challenges in the tech industry.
+                            As the UI/UX Designer for the AmazStar Puzzle project, I deepened my understanding of crafting user-centred interfaces that are both visually appealing and intuitive. This project sharpened my skills in creating responsive designs that adapt seamlessly across various devices. Collaborating with my team, I learned how to effectively integrate front-end and back-end components, ensuring a cohesive user experience. The experience of deploying the app as a functional .apk file for Android further enhanced my technical prowess and appreciation for mobile development. Overall, this project has been instrumental in refining my skills in design, teamwork, and project management, preparing me for future challenges in the tech industry.
                         </p>
                         <img src="images/projectscreenshot1.png" alt="Project Screenshot 1" class="img-fluid my-2">
                         <img src="images/projectscreenshot2.png" alt="Project Screenshot 2" class="img-fluid my-2">
