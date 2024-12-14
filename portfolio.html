@@ -96,98 +96,9 @@
                         <p class="card-text">
                             In Lab 3, "Android Studio: App Development," I developed an energy science quiz app with Android Studio. I faced several challenges, including navigating the IDE and managing XML layouts and constraints. Integrating the text-to-speech feature was particularly complex. Testing on BlueStacks X had performance issues, so I tested on a physical device. Overall, this experience enhanced my understanding of Android development and coding skills, making me eager to learn more about advanced topics in the future.
                         </p>
-                        <p>Code Snippets (XML)</p>
-                        <pre><code>
-&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".MainActivity"&gt;
-
-    &lt;ImageView
-        android:id="@+id/lightBulbImageView"
-        android:layout_width="145dp"
-        android:layout_height="205dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.079"
-        app:srcCompat="@drawable/light_bulb" /&gt;
-
-    &lt;TextView
-        android:id="@+id/titleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="Welcome to Energy Science Quiz!"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.394" /&gt;
-
-    &lt;TextView
-        android:id="@+id/descriptionTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:text="Test your knowledge in the energy science quiz."
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.471" /&gt;
-
-    &lt;ImageView
-        android:id="@+id/earthRocksImageView"
-        android:layout_width="127dp"
-        android:layout_height="150dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.664"
-        app:srcCompat="@drawable/earth_rocks" /&gt;
-
-    &lt;ImageView
-        android:id="@+id/sunImageView"
-        android:layout_width="143dp"
-        android:layout_height="141dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.91"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.669"
-        app:srcCompat="@drawable/sun" /&gt;
-
-    &lt;Button
-        android:id="@+id/startButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:text="Start quiz"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.825" /&gt;
-
-&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
-                        </code></pre>
+                        <p>App Screenshots</p>
+                        <img src="images/lab3screenshot1.png" alt="Lab 3 Screenshot 1" class="img-fluid my-2">
+                        <img src="images/lab3screenshot2.png" alt="Lab 3 Screenshot 2" class="img-fluid my-2">
                     </div>
                 </div>
             </div>
@@ -203,33 +114,9 @@
                         <p class="card-text">
                             In Lab 4, "Android Studio: App Development - Classes," I explored the concept of classes in Dart. I learned how to define classes and their properties, implement constructors, and utilize inheritance and method overriding. Through practical examples, I understood how classes model real-world objects, promote code reuse, and enhance modularity. The lab also highlighted the differences between Dart's classes and those in other programming languages, emphasizing the advantages of using classes for structured and maintainable code in mobile development.
                         </p>
-                        <p>Code Snippets (Dart)</p>
-                        <pre><code>
-// Create a class called Car.
-class Car {
-  // Set properties for the class.
-  String make;   // Make of the car (for example, Nissan).
-  String model;  // Model of the car (for example, Corolla).
-  int year;      // Year of the car (for example, 2015).
-
-  // Create a constructor to set the properties.
-  Car(this.make, this.model, this.year);
-
-  // Function to show car information.
-  void showInfo() {
-    // Print the make, model, and year of the car.
-    print('Car: $make $model, Year: $year');
-  }
-}
-
-// Main method where the program runs begins.
-void main() {
-  // Make the car class an object.
-  var myCar = Car('Nissan', 'Corolla', 2015);
-  // Call the show info function on the car object.
-  myCar.showInfo();
-}
-                        </code></pre>
+                        <p>App Screenshots</p>
+                        <img src="images/lab4screenshot1.png" alt="Lab 4 Screenshot 1" class="img-fluid my-2">
+                        <img src="images/lab4screenshot2.png" alt="Lab 4 Screenshot 2" class="img-fluid my-2">
                     </div>
                 </div>
             </div>
@@ -245,68 +132,9 @@ void main() {
                         <p class="card-text">
                             In Lab 5, "Introduction to Flutter," I learned how to use Material Components in Flutter to create a user-friendly and visually appealing task management application. I implemented various Material Buttons (ElevatedButton, OutlinedButton, and TextButton) and Material Cards to display task information effectively. Each card includes task details and interactive elements such as checkboxes and remove buttons, following material design principles to ensure a consistent and cohesive user experience. Through this exercise, I enhanced my understanding of Flutter's design components and their application in real-world scenarios, improving my skills in mobile app development.
                         </p>
-                        <p>Code Snippets (Dart)</p>
-                        <pre><code>
-import 'package:flutter/material.dart';
-
-// The opening code for the app.
-void main() {
-  // Executes the application by making an example of my app.
-  runApp(const MyApp());
-}
-
-// My app class that extends stateless widget, which means it is fixed.
-class MyApp extends StatelessWidget {
-  // The constructor with a key to handle the widget state.
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    // Makes the widget tree for the app.
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material Buttons Example'),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: &lt;Widget&gt;[
-              // The elevated button widget is used for main activities.
-              ElevatedButton(
-                onPressed: () {
-                  // Prints the text when the button is clicked.
-                  print('Elevated button clicked.');
-                },
-                // The text is shown on the button.
-                child: Text('Elevated Button'),
-              ),
-              // The outlined button widget is used for subordinate activities.
-              OutlinedButton(
-                onPressed: () {
-                  // Prints the text when the button is clicked.
-                  print('Outlined button clicked.');
-                },
-                // The text is shown on the button.
-                child: Text('Outlined Button'),
-              ),
-              // The text button widget is used for less significant activities.
-              TextButton(
-                onPressed: () {
-                  // Prints the text when the button is clicked.
-                  print('Text button clicked.');
-                },
-                // The text is shown on the button.
-                child: Text('Text Button'),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-                        </code></pre>
+                        <p>App Screenshots</p>
+                        <img src="images/lab5screenshot1.png" alt="Lab 5 Screenshot 1" class="img-fluid my-2">
+                        <img src="images/lab5screenshot2.png" alt="Lab 5 Screenshot 2" class="img-fluid my-2">
                     </div>
                 </div>
             </div>
@@ -329,6 +157,8 @@ class MyApp extends StatelessWidget {
                         <p class="card-text">
                             In classwork 1, “Android Studio: App Development,” working on the Android app project was both challenging and enjoyable. Setting up Android Studio and an external emulator gave a strong basis for Android development environments. Designing the layout to show personalized information like my name, Banner ID, class, section, and favourite quote gave me a chance to play with different UI elements and constraints. Testing the app on both the Android Studio emulator and an external emulator such as Bluestacks showed the importance of cross-platform compatibility. One of the most challenging tasks was ensuring that the layout showed consistency across different kinds of screens and resolutions. Overall, this project helped me understand Android development and gave practical knowledge of fixing and improving app performance.
                         </p>
+                        <p>App Example</p>
+                        <img src="images/classwork1screenshot.png" alt="Classwork 1 Screenshot 1" class="img-fluid my-2">
                     </div>
                 </div>
             </div>
@@ -344,11 +174,14 @@ class MyApp extends StatelessWidget {
                         <p class="card-text">
                             In classwork 2, “MIT APP Inventor: App Development,” I faced several challenges and learned many things while creating my app on Healthy Meal Planner. At first, I struggled to navigate between screens. It took careful focus on how buttons and logic blocks were connected. After that, it took several drafts to ensure users could enter meal details, view details, and clear details. I was able to understand how to use logical blocks effectively to manage user inputs and outputs. Maintaining a consistent design idea across two screens was challenging, but I learned how to properly add colours and fonts. I got skilled in using several input types, which helped me understand user interactions in apps. The classwork gave me practical experience with logic blocks, helping me know how to build active functionality according to user input. Overall, it caught my interest in food and health, motivating me to keep learning the connection between technology and health.
                         </p>
+                        <p>App Examples</p>
+                        <img src="images/classwork2screenshot1.png" alt="Classwork 2 Screenshot 1" class="img-fluid my-2">
+                        <img src="images/classwork2screenshot2.png" alt="Classwork 2 Screenshot 2" class="img-fluid my-2">
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Classwork 2 -->
+        <!-- Classwork 3 -->
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
@@ -359,6 +192,9 @@ class MyApp extends StatelessWidget {
                         <p class="card-text">
                             In classwork 3, “Flutter: App Development,” moving from Android Studio to Flutter was both hard and fun. Using XML for layout design in Android Studio might be useful, but it can also be tedious and complicated for advanced interfaces. The challenges I faced were changing to the Dart programming language and Flutter's widget architecture and learning the widget tree structure. The advantages are that Flutter helps cross-platform development, hot reloading for fast changes, and a big collection of already built widgets, and Android Studio gives full design tools, improved interaction with specific Android tools, and strong debugging features. The disadvantages are that Flutter needs understanding new structures and language, and Android Studio's user interface build step is more complicated and takes time. While Android Studio's extensive tools make it suitable for making specific Android applications, Flutter's multi-platform support and fast creation step make it an outstanding option for programmers who want to rapidly make apps for many platforms.
                         </p>
+                        <p>App Examples</p>
+                        <img src="images/classwork3screenshot1.png" alt="Classwork 3 Screenshot 1" class="img-fluid my-2">
+                        <img src="images/classwork3screenshot2.png" alt="Classwork 3 Screenshot 2" class="img-fluid my-2">
                     </div>
                 </div>
             </div>
