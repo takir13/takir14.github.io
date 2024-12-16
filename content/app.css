@@ -47,4 +47,6 @@ a:hover {
 
 .card {
     margin-bottom: 20px;
+    background-color: #FFDAB9;
+    border: 1px solid #FFA07A;
 }
