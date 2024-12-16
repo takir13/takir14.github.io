@@ -4,82 +4,21 @@
 // AKA - Anonymous Self-Executing Function.
 (function(){
 
-    function addAboutMeButtonListener(){
-
-        // Bind the button on the home page to a variable.
-        let AboutMeButton = document.getElementById("AboutMeBtn");
-
-        // Create an event listener for when the user clicks the button.
-        // When the user clicks the button, redirect to the about us page.
-        AboutMeButton.addEventListener("click", function ()
-        {
-            location.href = "about.html";
-        });
-    }
-
     // Functions that run when the user is on that page.
     function DisplayHomePage() {
-        console.log("Called DisplayHomePage");
-        addAboutMeButtonListener();
-
-        // Assigning a variable with the first main tag on the homepage.
-        let MainContent = document.getElementsByTagName("main")[0];
-
-        // Creating a paragraph tag inside the homepage.
-        let MainParagraph = document.createElement("p");
-
-        // Set the id and class attribute to the paragraph tag.
-        MainParagraph.setAttribute("id", "MainParagraph");
-        MainParagraph.setAttribute("class", "mt-3");
-
-        // Add content to the paragraph.
-        MainParagraph.textContent = "This is my first paragraph.";
-
-        // Attach Main paragraph to the main tag.
-        MainContent.appendChild(MainParagraph);
-
-        let FirstString = "This is ";
-        let SecondString = `${FirstString}the main paragraph.`;
-
-        // Append the paragraph with the new string.
-        MainParagraph.textContent = SecondString;
-
-        // Update the main tag.
-        MainContent.appendChild(MainParagraph);
-
-        // Create a variable that accesses the body.
-        let DocumentBody = document.body;
-
-        // Create an article tag.
-        let Article = document.createElement("article");
-        let ArticleParagraph= `<p id = "ArticleParagraph" class = "mt-3"> This is my article paragraph.</p>`;
-        Article.setAttribute("class", "container");
-
-        // Add the article attributes inside the article tag.
-        Article.innerHTML = ArticleParagraph;
-
-        // Add the article content to the webpage.
-        DocumentBody.appendChild(Article);
+        console.log("Home Page");
     }
 
     function DisplayAboutPage(){
-        console.log("Called DisplayAboutPage");
-        addAboutMeButtonListener();
+        console.log("About Page");
+    }
+
+    function DisplayPortfolioPage(){
+        console.log("Portfolio Page");
     }
 
     function DisplayContactPage(){
-        console.log("Called DisplayContactPage");
-        addAboutMeButtonListener();
-    }
-
-    function DisplayProductPage(){
-        console.log("Called DisplayProductPage");
-        addAboutMeButtonListener();
-    }
-
-    function DisplayServicesPage(){
-        console.log("Called DisplayServicesPage");
-        addAboutMeButtonListener();
+        console.log("Contact Page");
     }
 
     function Start()
@@ -91,17 +30,14 @@
             case "Home":
                 DisplayHomePage();
                 break;
-            case "About Us":
+            case "About Me":
                 DisplayAboutPage();
                 break;
-            case "Contact Us":
+            case "App Portfolio":
+                DisplayPortfolioPage();
+                break;
+            case "Contact Me":
                 DisplayContactPage();
-                break;
-            case "Products":
-                DisplayProductPage();
-                break;
-            case "Services":
-                DisplayServicesPage();
                 break;
         }
     }
