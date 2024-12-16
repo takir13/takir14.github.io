@@ -30,13 +30,13 @@
             case "Home":
                 DisplayHomePage();
                 break;
-            case "About Me":
+            case "About":
                 DisplayAboutPage();
                 break;
-            case "App Portfolio":
+            case "Portfolio":
                 DisplayPortfolioPage();
                 break;
-            case "Contact Me":
+            case "Contact":
                 DisplayContactPage();
                 break;
         }
